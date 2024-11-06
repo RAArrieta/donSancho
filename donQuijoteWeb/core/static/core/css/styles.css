@@ -1,0 +1,325 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: 'Merriweather', serif;
+  color: #333;
+  background-color: #f4f4f9;
+}
+
+/* HEADER */
+.header-container {
+  background-color: #334e6b;
+  height: 12vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.title {
+  color: #fff;
+  font-family: 'Poetsen One', sans-serif;
+  font-size: 32px;
+}
+
+/* HEADER LOGIN */
+.usuario-logout {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.list-link {
+  margin-left: 20px;
+}
+.usuario-label {
+  color: #fff;
+  font-weight: bold;
+  margin-right: 10px;
+}
+.usuario-nombre {
+  color: #fff;
+}
+.btn-logout {
+  padding: 5px 10px;
+  background-color: #2C3E50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+.btn-logout:hover {
+  background-color: #1a242f;
+}
+.header-link-app {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.header-link-app:hover {
+  background-color: #bdc3c7;
+  color: #2C3E50;
+}
+
+/* FOOTER */
+.footer-container {
+  background-color: #334e6b;
+  height: 5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+.footer-info {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* MENU */
+.menu-container {
+  width: 20%;
+  height: 83vh;
+  background-color: #fdfdfd71;
+  float: left;
+  overflow-y: auto;
+  border-right: 1px solid #bdc3c7;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.list-app {
+  list-style: none;
+  padding: 0;
+}
+.list-link {
+  position: relative;
+  margin-bottom: 10px;
+}
+.link-app {
+  color: #2C3E50;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.link-app:hover {
+  background-color: #bdc3c7;
+  color: #2C3E50;
+}
+/* Submenu */
+.sub-menu {
+  list-style: none;
+  padding: 0;
+  margin-left: 20px;
+  display: none;
+  border-left: 2px solid #bdc3c7;
+  margin-top: 10px;
+}
+.list-link:hover > .sub-menu,
+.sub-list-link:hover > .sub-menu {
+  display: block;
+}
+
+/* MAIN */
+.main-container {
+  width: 80%;
+  height: 83vh; 
+  float: left;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* MAIN TITULO */
+.main-titulo-container {
+  width: 100%;
+  height: auto; 
+  text-align: left;
+  border-radius: 8px;
+}
+.titulo-opciones-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-titulo {
+  font-size: 32px;
+  color: #2C3E50;
+  font-family: 'Merriweather', serif;
+  padding-left: 40px; 
+}
+.main-hr {
+  border: none;
+  width: 95%;
+  height: 2px;
+  background-color: #334e6b;
+  margin: 10px auto; 
+}
+
+/* BOTONES */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+}
+.btn-opc {
+  border: none;
+  color: #2C3E50;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #f4f4f9;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-opc:hover {
+  background-color: #bdc3c7;
+  color: #2C3E50;
+}
+.btn-success {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2C3E50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.btn-success:hover {
+  background-color: #1a242f;
+}
+.btn-delete {
+  background-color: #e74c3c; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+.btn-delete:hover {
+  background-color: #c0392b; 
+}
+
+/* CARD */
+.card {
+  padding: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+  box-shadow: 0 4px 4px rgba(56, 55, 55, 0.2);
+}
+
+/* SECTION */
+.section-container {
+  width: 100%;
+  height: 100%;
+}
+/* FORM */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Merriweather', serif;
+}
+
+/* ********************************* */
+/* ********************************* */
+
+/* ESCRITORIO */
+.escritorio {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1; 
+  gap: 40px;
+  justify-content: space-around;
+  padding: 40px;
+  align-items: center;
+}
+.escritorio-link {
+  text-decoration: none;
+  color: #2C3E50;
+  text-align: center;
+  flex-basis: calc(25% - 40px); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.escritorio-link:hover {
+  transform: translateY(-5px);
+}
+.escritorio-img {
+  width: 47%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.escritorio-nom { 
+  padding-top: 20px;
+}
+
+/* ICONOS */
+.icono-opc {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* ALERT */
+.messages {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.messages li {
+  background-color: #f8d7da; /* color de fondo similar a SweetAlert para mensajes de error */
+  color: #721c24; /* color de texto */
+  padding: 15px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.messages li.success {
+  background-color: #d4edda; /* color de fondo para mensajes de éxito */
+  color: #155724;
+}
+
+.messages li.warning {
+  background-color: #fff3cd; /* color de fondo para mensajes de advertencia */
+  color: #856404;
+}
+
+.messages li.info {
+  background-color: #cce5ff; /* color de fondo para mensajes de información */
+  color: #004085;
+}

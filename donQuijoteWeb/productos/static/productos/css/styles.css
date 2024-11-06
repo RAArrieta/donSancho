@@ -1,0 +1,93 @@
+/* index.html */
+.categorias-container {
+    width: 90%;
+    margin: 0 auto; 
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.categoria-titulo {
+    font-size: 24px;
+    color: #2C3E50;
+    font-family: 'Merriweather', serif;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.categoria-hr {
+    width: 95%;
+    height: 1px;
+    border: none;
+    background-color: #2C3E50;
+    margin: 0 auto 5px;
+}
+.productos {
+    margin-top: 8px;
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    grid-template-areas: "nom prc opc";
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.producto-nombre {
+    grid-area: nom;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 20px;
+}
+.producto-precio {
+    grid-area: prc;
+    font-size: 16px;
+    text-align: center;
+    color: #2C3E50;
+}
+.producto-opc {
+    grid-area: opc;
+    display: flex;
+    justify-content: space-around;
+}
+.icono-opc {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+.icono-opc:hover {
+    transform: scale(1.2);
+}
+/* lista_wa.html */
+.card-wa {
+    padding: 25px;
+}
+
+/* producto_detail.html */
+.eliminar {
+    width: 60%;
+    max-width: 600px;
+    height: auto;
+    margin: 50px auto;
+}
+.eliminar p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.producto-card-titulo {
+    font-size: 28px;
+    color: #2C3E50;
+    margin-bottom: 10px;
+}
+.detalle-producto {
+    font-size: 16px;
+    color: #555;
+    margin: 10px;
+}
+/* producto_form.html */
+.form-container {
+    width: 100%;
+    height: calc(100vh - 17vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}

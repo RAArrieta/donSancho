@@ -1,0 +1,27 @@
+{% load static %}
+
+<form class="select-productos-container" method="post" id="form-productos" action="{% url 'carro:nuevo_producto' 0 %}">
+    <h3 class="carro-titulo">Productos</h3>
+    {% csrf_token %}
+    {% for categoria, productos in categorias.items %}
+        {% if categoria.estado == True %}
+            <select class="selects" name="producto" id="producto_{{ forloop.counter }}" onchange="deseleccionarOtrosYEnviar(event)">
+                <option disabled selected>{{ categoria }}</option>
+                {% for producto in productos %}
+                    {% if producto.precio_doc %}
+                        <option value="{{ producto.id }}">{{ producto.nombre }} c/u: ${{ producto.precio_unit }} | 1/2: ${{ producto.precio_media }} | Doc: ${{ producto.precio_doc }} </option>
+                    {% elif producto.precio_media and not producto.precio_doc%}
+                        <option value="{{ producto.id }}">{{ producto.nombre }} 1/2: ${{ producto.precio_media }} | c/u: ${{ producto.precio_unit }}</option>
+                    {% else %}
+                        <option value="{{ producto.id }}">{{ producto.nombre }} c/u: ${{ producto.precio_unit }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        {% endif %}  
+    {% endfor %}
+    <input type="hidden" name="producto_id" id="producto_id" value="">
+</form>
+
+<script src="{% static 'carro/js/enviar_select.js' %}"></script>
+
+

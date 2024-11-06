@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    dS | Estadisticas
+{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'estadisticas/css/styles.css' %}">
+{% endblock css %}
+
+{% block titulo %}
+{% include 'core/components/encabezado.html' with titulo_texto="Estadisticas"%}
+{% endblock titulo %}
+
+{% block main %}
+    <div class=" estadisticas-container card">
+        
+        {% include 'estadisticas/components/estadisticas.html' %}
+
+        {% include 'estadisticas/components/estadisticas_filtros.html' %}
+
+    </div>
+{% endblock main %}

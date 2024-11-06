@@ -1,0 +1,9 @@
+<footer class="footer-container">
+    {% if cant_envios > 0 %}
+        <p class="footer-info">ENVIOS: {{cant_envios}}</p>
+    {% endif %}
+    {% if can %}
+        
+    {% endif %}
+    <p class="footer-info">{% if cant_pedidos %}PEDIDOS: {{cant_pedidos}}{% endif %}{% if cant_pendientes %} / PENDIENTES: {{cant_pendientes}}{% endif %} {% if cant_entregados %}  / ENTREGADOS: {{cant_entregados}}{% endif %} {% if cant_reservados %}  / RESERVADOS: {{cant_reservados}}{% endif %} </p>
+</footer>

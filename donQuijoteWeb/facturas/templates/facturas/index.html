@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    dS | Caja Diaria
+{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'facturas/css/styles.css' %}">
+{% endblock css %}
+
+{% block titulo %}
+    {% include 'core/components/encabezado.html' with titulo_texto="Caja Diaria" %}
+{% endblock titulo %}
+
+{% block main %}
+{% if messages %} 
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% if caja_total != 0.0 %}
+    <div class="facturas-totales card">
+        <h3>Efectivo: ${{caja_efectivo}}</h3>
+        <p>|</p>
+        <h3>Mercado: ${{caja_mercado}}</h3>
+        <p>|</p>
+        <h3>Naranja: ${{caja_naranja}}</h3>
+        <p>|</p>
+        <h3>Total: $ {{caja_total}}</h3>
+    </div>
+
+    {% for key, value in pedidos.items %}
+        <div class="cajas-detalle">
+            <p class="cajas-detalle-pedido">Pedido {{key}}</p>
+            <p class="cajas-detalle-pedido" {% if value.datos.pago == "cobrar" %}style="color:red;"{% endif %}>{{ value.datos.pago|upper }}</p>
+            <p class="cajas-detalle-pedido">${{ value.datos.total }}</p>
+        </div>
+        <div class="facturas-hr-container">
+            <hr class="facturas-hr">  
+        </div>
+    {% endfor %}            
+{% endif %}
+
+{% endblock main %}

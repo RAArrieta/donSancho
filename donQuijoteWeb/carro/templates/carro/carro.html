@@ -1,0 +1,33 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+    dS | Pedidos
+{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'carro/css/styles.css' %}">
+{% endblock css %}
+
+{% block titulo %}
+{% include 'core/components/encabezado.html' with titulo_texto="Pedido" %}
+{% endblock titulo %}
+
+{% block main %}   
+<div class="carro-container">
+    <div class="widget-container card">
+        {% include "carro/components/widget.html" %}
+    </div>
+    <div class="productos-datos-container card">
+        {% include 'carro/components/select_productos.html' %}
+
+        <div class="datos-container">
+            {% include "carro/components/carro_datos.html" %}
+            <div class="btn-container">
+                <a class="btn-success" href="{% url 'carro:carro' %}?cargar_pedido=true">Guardar</a>
+                <a class="btn-delete" href="{% url 'carro:limpiar' %}">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</div>    
+{% endblock main %}
